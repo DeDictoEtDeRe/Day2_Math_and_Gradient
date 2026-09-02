@@ -29,7 +29,7 @@ class BeidenPfeile:
         print(f"Das Skalarprodukt ist {self.SkalarProdukt()}")
         print(f"Die Euklidische Norm Des Ersten Pfeils ist {self.EuklidischLange(self.DerErstePfeil)}")
         print(f"Die Euklidische Norm Des Zweiten Pfeils ist {self.EuklidischLange(self.DerZweitePfeil)}")
-        print(f"Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils is {self.Koinus_Ahnlichkeit()}")
+        print(f"Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils ist {self.Koinus_Ahnlichkeit()}")
 if __name__== '__main__':
     DieBeidenPfeile=BeidenPfeile(np.array([3.0,4.0],dtype=np.float64),np.array([4.0,-3.0],dtype=np.float64))
     DieBeidenPfeile.IchDruckeDieConsequenzAus()
