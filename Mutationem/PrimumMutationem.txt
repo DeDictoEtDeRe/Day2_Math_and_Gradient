@@ -1,0 +1,14 @@
+Teil Alpha:
+	1.SkalarProduct(\vec{a},\vec{b})=3*4+4*(-3)
+	2.Die Euklidische Norm Des Ersten Vectors ist sqrt(3.^2+4.^2)=5
+	3.Die Euklidische Nome Des Zweiten Vectors ist sqrt(4.^2+(-3).^2)=5
+	4.Kosinus_A(umlaut)hnlichkeit=SkalarProduct/DieEuklidischeNorm(Der Erste Vektor)*DieEuklidischeNorm(Der Zweiten Vector)=0/(5*5)=0
+Teil Bravo:
+	- Anmerkung:
+		- Der code befindet sich in der Datei ZweiPfeil.py
+		- Ich habe den Pfeil verwendet, um einen Vektor zu kennzeichnen 
+	- Die Standardausgabe des Skripts:
+		Das Skalarprodukt ist 0.0
+		Die Euklidische Norm Des Ersten Pfeils ist 5.0
+		Die Euklidische Norm Des Zweiten Pfeils ist 5.0
+		Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils is 0.0
