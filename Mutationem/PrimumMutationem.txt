@@ -6,9 +6,28 @@ Teil Alpha:
 Teil Bravo:
 	- Anmerkung:
 		- Der code befindet sich in der Datei ZweiPfeil.py
-		- Ich habe den Pfeil verwendet, um einen Vektor zu kennzeichnen 
+		- Ich habe den Pfeil verwendet, um einen Vektor zu bezeichnen 
 	- Die Standardausgabe des Skripts:
 		Das Skalarprodukt ist 0.0
 		Die Euklidische Norm Des Ersten Pfeils ist 5.0
 		Die Euklidische Norm Des Zweiten Pfeils ist 5.0
-		Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils is 0.0
+		Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils is 0.0i
+Teil Charlie:
+		Zur Berechnung der Einfachen Linearen Regression ben√∂tigen wir den Mittelwert der Daten
+	der unabh√ngigen Variablen, den Mittelwert der Daten der St√rvariablen, den Mittelwert der quadrierten
+	Daten der unabh√ngigen Variablen sowie Mittelwert aus dem Produkt der unabh√ngigen Variablen und der St√rvariab		len
+	Hier muss ich wieder zu der Sprache zur√ckkehren,an die ich gew√hnt bin
+	1.The manual calculation and the code
+	1.1Manuelle Berechnung:
+		the mean of the independent variable=*55*
+		the mean of the confounding variable=*120.4* (because at a lot of times, the experiment is conducted without explicit seeking for dependent variable but rather the confounding variable)
+		the mean of the quadratic of the independ variable, which is  formed by Faulhaber's formula for p=2, we get *385*
+		the mean of the multiplication of the independent variable and confounding variable is *826.5*
+		With the first derivative to be zero and we know the it's semipositve-definite.
+		Under the assumption of \hat(y)=a*x+b
+		a=\frac{n\sum_{i}{x_i*y_i}-\sum_{i}{x_i}*\sum_i{y_i}}{n\sum_{i}{x_i^2}-\left(\sum{x_i\right})^2}=1.9915
+		b=\frac{\sum_{i}{x_i^2}*\sum_{i}{y_i}-\sum_{i}{x_i}*\sum_{i}{x_i*y_i}{n\sum_{i}{x_i^2}-\left(\sum{x_i\right})^2}=1.0867
+	1.2
+	Please run the root folder's Gradienenabstieg.py
+	2. 
+	Because the gradient is define as the most steep direction for increasment of the function by mathemtical theorem, which means, comparing to other directions , nearby or farther away, along the gradient produces the most ameliorerment in the function value. So if we reverse the direction by 180 degree, we get the most decreasing direction. However, we can't not decrease with fixed step because in complicated manifold, the situation is unpredicatable. The mitigation will be mentioned in later discourse. 	
