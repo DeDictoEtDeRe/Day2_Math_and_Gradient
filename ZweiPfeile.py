@@ -1,36 +1,43 @@
 import numpy as np
 
-class BeidenPfeile:
-    DerErstePfeil: np.ndarray[any, np.float64]
-    DerZweitePfeile: np.ndarray[any, np.float64]
-    def __init__(self, DerErstePfeil: np.ndarray[any, np.float64], DerZweitePfeil: np.ndarray[any, np.float64]):
-        self.DerErstePfeil=DerErstePfeil
-        self.DerZweitePfeil=DerZweitePfeil
-    def SkalarProdukt(self,DerErstePfeil=None,DerZweitePfeil=None):
-        #U(Umlaut)berpru(Umlaut)fen Sie the die Abmessungen der beiden Pfeile
-        Summe=0
-        if DerErstePfeil is not None and DerZweitePfeil is not None:
-            if DerErstePfeil.ndim == DerZweitePfeil.ndim:
-                for DieErsteKomponente,DieZweiteKomponente in np.nditer([DerErstePfeil,DerZweitePfeil]): 
-                    Summe += DieErsteKomponente*DieZweiteKomponente
-            return Summe
-        else:
-            if self.DerErstePfeil.ndim == self.DerZweitePfeil.ndim:
-                for DieErsteKomponente,DieZweiteKomponente in np.nditer([self.DerErstePfeil,self.DerZweitePfeil]): 
-                    Summe += DieErsteKomponente*DieZweiteKomponente
-            return Summe
-    def EuklidischLange(self,DerPfeil):
-        DieRuckkehr=self.SkalarProdukt(DerPfeil,DerPfeil)
-        return np.sqrt(DieRuckkehr) 
-    def Koinus_Ahnlichkeit(self):
-        DieRuckkehr=self.SkalarProdukt()/(self.EuklidischLange(self.DerErstePfeil)*self.EuklidischLange(self.DerZweitePfeil))
-        return DieRuckkehr
-    def IchDruckeDieConsequenzAus(self):
-        print(f"Das Skalarprodukt ist {self.SkalarProdukt()}")
-        print(f"Die Euklidische Norm Des Ersten Pfeils ist {self.EuklidischLange(self.DerErstePfeil)}")
-        print(f"Die Euklidische Norm Des Zweiten Pfeils ist {self.EuklidischLange(self.DerZweitePfeil)}")
-        print(f"Die Kosinus-Ahnlichkeit des ersten Pfeils und des zweiten Pfeils ist {self.Koinus_Ahnlichkeit()}")
-if __name__== '__main__':
-    DieBeidenPfeile=BeidenPfeile(np.array([3.0,4.0],dtype=np.float64),np.array([4.0,-3.0],dtype=np.float64))
-    DieBeidenPfeile.IchDruckeDieConsequenzAus()
 
+class DeuxVecteurs:
+    premier_vecteur: np.ndarray[any, np.float64]
+    deuxieme_vecteur: np.ndarray[any, np.float64]
+
+    def __init__(self, premier_vecteur: np.ndarray[any, np.float64], deuxieme_vecteur: np.ndarray[any, np.float64]):
+        self.premier_vecteur = premier_vecteur
+        self.deuxieme_vecteur = deuxieme_vecteur
+
+    def ProduitScalaire(self, premier_vecteur=None, deuxieme_vecteur=None):
+        # Vérifiez les dimensions des deux vecteurs.
+        somme = 0
+        if premier_vecteur is not None and deuxieme_vecteur is not None:
+            if premier_vecteur.ndim == deuxieme_vecteur.ndim:
+                for premiere_composante, deuxieme_composante in np.nditer([premier_vecteur, deuxieme_vecteur]):
+                    somme += premiere_composante * deuxieme_composante
+            return somme
+        else:
+            if self.premier_vecteur.ndim == self.deuxieme_vecteur.ndim:
+                for premiere_composante, deuxieme_composante in np.nditer([self.premier_vecteur, self.deuxieme_vecteur]):
+                    somme += premiere_composante * deuxieme_composante
+            return somme
+
+    def NormeEuclidienne(self, vecteur):
+        resultat = self.ProduitScalaire(vecteur, vecteur)
+        return np.sqrt(resultat)
+
+    def SimilariteCosinus(self):
+        resultat = self.ProduitScalaire() / (self.NormeEuclidienne(self.premier_vecteur) * self.NormeEuclidienne(self.deuxieme_vecteur))
+        return resultat
+
+    def AfficherResultats(self):
+        print(f"Le produit scalaire est {self.ProduitScalaire()}")
+        print(f"La norme euclidienne du premier vecteur est {self.NormeEuclidienne(self.premier_vecteur)}")
+        print(f"La norme euclidienne du deuxième vecteur est {self.NormeEuclidienne(self.deuxieme_vecteur)}")
+        print(f"La similarité cosinus des deux vecteurs est {self.SimilariteCosinus()}")
+
+
+if __name__ == '__main__':
+    les_deux_vecteurs = DeuxVecteurs(np.array([3.0, 4.0], dtype=np.float64), np.array([4.0, -3.0], dtype=np.float64))
+    les_deux_vecteurs.AfficherResultats()
